@@ -10,8 +10,9 @@ ${reset}
     padding: 0;
   }
 
-  body{
+  html, body{
     font-family: 'Noto Sans KR', sans-serif;
+    height: 100%;
   }
 
 	a{
