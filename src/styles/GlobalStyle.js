@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
-  ${reset}
+${reset}
 
   *{
     box-sizing: border-box;
@@ -18,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
+
+  
+	 
+	
 `;
 
 export default GlobalStyle;
