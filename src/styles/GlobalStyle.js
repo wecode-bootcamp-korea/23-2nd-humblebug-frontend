@@ -2,9 +2,19 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
-  ${reset}
-	
-	// 전역스타일
+${reset}
+
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+  
+	 
 	
 `;
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
 import Main from './pages/Main/Main';
 
 const Routes = () => {
@@ -7,6 +8,7 @@ const Routes = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={Main} />
+        <Route exact path="/footer" component={Footer} />
       </Switch>
     </Router>
   );
