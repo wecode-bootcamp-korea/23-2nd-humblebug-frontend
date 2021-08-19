@@ -7,15 +7,15 @@ export const Nav = () => {
   return (
     <Navbar>
       <ContentsBox>
-        <i class="fas fa-bars"></i>
+        <i className="fas fa-bars"></i>
         <p>프로젝트 둘러보기</p>
         <Link to="/upload">프로젝트 올리기</Link>
       </ContentsBox>
       <div className="logo">tumblbug</div>
       <ContentsBox>
-        <i class="fas fa-search"></i>
+        <i className="fas fa-search"></i>
         <p>로그인/회원가입</p>
-        <i class="fas fa-user-circle"></i>
+        <i className="fas fa-user-circle"></i>
       </ContentsBox>
     </Navbar>
   );
