@@ -5,6 +5,8 @@ import Main from './pages/Main/Main';
 import Upload from './pages/Upload/Upload';
 import Footer from './components/Footer/Footer';
 import Detail from './pages/Detail/Detail';
+import Login from './pages/Login/Login';
+import Spinner from './components/Login/Spinner';
 
 const Routes = () => {
   return (
@@ -14,6 +16,8 @@ const Routes = () => {
         <Route exact path="/" component={Main} />
         <Route exact path="/upload" component={Upload} />
         <Route exact path="/detail" component={Detail} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/users/signin" component={Spinner} />
       </Switch>
       <Footer />
     </Router>
