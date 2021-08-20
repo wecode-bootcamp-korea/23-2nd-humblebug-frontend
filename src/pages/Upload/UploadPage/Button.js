@@ -3,7 +3,13 @@ import styled from 'styled-components';
 
 const Button = ({ children, categoryBtnHandler, isButtonActive, id }) => {
   return (
-    <CategoryBtn onClick={() => categoryBtnHandler(id)} active={isButtonActive}>
+    <CategoryBtn
+      name="category_id"
+      onClick={e => {
+        categoryBtnHandler(e.target.name, id);
+      }}
+      active={isButtonActive}
+    >
       {children}
     </CategoryBtn>
   );

@@ -6,6 +6,7 @@ export const API = {
   DETAIL_COMMENT_GET: `${BASE_URL}/project/4/comments`, //상세페이지 댓글 GET
   DETAIL_COMMENT_POST: `${BASE_URL}/project/4/comment`, //상세페이지 댓글 POST
   SIGNIN: `${BASE_URL}/users/signin`,
+  PROJECT: `${BASE_URL}/project`,
 };
 // const BASE_URL = 'http://3.144.112.76:8000';
 // const BASE_URL = 'http://10.58.3.43:8000';

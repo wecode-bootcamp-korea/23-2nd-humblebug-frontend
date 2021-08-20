@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const TextInput = ({ textHandler }) => {
+const TextInput = ({ textHandler, placeholder }) => {
   const [activeInput, setActiveInput] = useState(false);
 
   const inputHandler = () => {
@@ -12,16 +12,20 @@ const TextInput = ({ textHandler }) => {
     <Text
       onFocus={inputHandler}
       onBlur={inputHandler}
-      onChange={e => textHandler(e.target.value)}
+      placeholder={placeholder}
+      name="description"
+      onChange={e => textHandler(e.target.name, e.target.value)}
       borderOn={activeInput}
     />
   );
 };
 
-const Text = styled.textarea.attrs({
+const Text = styled.textarea.attrs(props => ({
   type: 'text',
-  placeholder: '프로젝트 요약을 입력해주세요',
-})`
+  placeholder: props.placeholder
+    ? props.placeholder
+    : '프로젝트 상세 설명을 입력해주세요',
+}))`
   width: 400px;
   height: 100px;
   border: ${({ borderOn }) =>

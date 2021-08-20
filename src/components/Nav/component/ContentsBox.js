@@ -9,8 +9,8 @@ const Box = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  p {
-    padding: 0 20px;
+  a {
+    padding: 0 10px 0 20px;
   }
 `;
 

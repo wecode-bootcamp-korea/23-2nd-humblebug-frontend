@@ -14,8 +14,9 @@ const Submit = styled.div`
   transition: 1s ease all;
   padding-top: 30px;
   top: 70px;
-  right: ${props => (props.infoPage ? '250px' : '0px')};
-  opacity: ${props => (props.infoPage ? 1 : 0)};
+  right: ${({ infoPage }) => (infoPage ? '250px' : '0px')};
+  opacity: ${({ infoPage }) => (infoPage ? 1 : 0)};
+  z-index: ${({ infoPage }) => (infoPage ? 100 : -1)};
   h2 {
     margin: 20px auto;
   }
