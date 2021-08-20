@@ -1,1 +1,40 @@
-{}
+{
+    "project": [
+        {
+          "id": 4,
+          "category_id": 3,
+          "user_id": 1,
+          "user_name": "탱고플레이트팀",
+          "name": "탱고플레이트",
+          "image": "https://humblebug.s3.us-east-2.amazonaws.com/image1.png",
+          "aim_amount": 500000,
+          "created_at": "2021-08-19T11:03:10.216Z",
+          "end_date": "2021-11-06T00:00:00Z",
+          "description": "맛집 별점 어플 망고플레이트 클론코딩"
+        },
+        {
+          "id": 5,
+          "category_id": null,
+          "user_id": 1,
+          "user_name": "서카소팀",
+          "name": "서카소",
+          "image": "",
+          "aim_amount": null,
+          "created_at": "2021-08-19T11:19:55.388Z",
+          "end_date": null,
+          "description": "서울의 카페들을 소개합니다!"
+        },
+        {
+          "id": 6,
+          "category_id": 1,
+          "user_id": 1,
+          "user_name": "러시아워팀",
+          "name": "러시아워",
+          "image": "https://humblebug.s3.us-east-2.amazonaws.com/image2.png",
+          "aim_amount": 300000,
+          "created_at": "2021-08-19T11:31:13.508Z",
+          "end_date": "2021-11-08T00:00:00Z",
+          "description": "아트월이 돋보이는 러시 클론코딩"
+        }
+    ]
+}
