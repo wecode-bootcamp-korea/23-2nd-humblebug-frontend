@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Footer = () => {
   return (
-    <footer>
+    <FooterBody>
       {/* 푸터 윗부분 */}
       <FooterUpper>
         <SetWidth>
@@ -68,9 +68,16 @@ const Footer = () => {
           </IconsWrapper>
         </SetWidth>
       </FooterBottom>
-    </footer>
+    </FooterBody>
   );
 };
+
+const FooterBody = styled.footer`
+  display: ${window.location.pathname === '/upload' && 'none'};
+  position: relative;
+  width: 100%;
+  bottom: 0;
+`;
 
 const FooterUpper = styled.div`
   padding: 30px;

@@ -13,9 +13,11 @@ export const Nav = () => {
       </ContentsBox>
       <div className="logo">tumblbug</div>
       <ContentsBox>
-        <i className="fas fa-search"></i>
-        <p>로그인/회원가입</p>
-        <i className="fas fa-user-circle"></i>
+        <i class="fas fa-search"></i>
+        <Link to="/login">로그인/회원가입</Link>
+        <Link to="/update">
+          <i class="fas fa-user-circle"></i>
+        </Link>
       </ContentsBox>
     </Navbar>
   );

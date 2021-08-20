@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import Detail from './pages/Detail/Detail';
 import Login from './pages/Login/Login';
 import Slide from './components/Slide';
+import Update from './pages/Update/Update';
 
 const Routes = () => {
   return (
@@ -18,6 +19,7 @@ const Routes = () => {
         <Route exact path="/detail" component={Detail} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/slide" component={Slide} />
+        <Route exact path="/update" component={Update} />
       </Switch>
       <Footer />
     </Router>

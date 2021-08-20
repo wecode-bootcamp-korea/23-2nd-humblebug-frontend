@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 
@@ -10,12 +10,13 @@ const BtnInfo = [
   { id: 5, name: '기타' },
 ];
 
-const ButtonContainer = ({ pageHandler }) => {
-  const [btnOn, setBtnOn] = useState('');
+const ButtonContainer = ({ handleId, placeholder }) => {
+  useEffect(() => setBtnOn(placeholder), [placeholder]);
 
-  const categoryBtnHandler = id => {
+  const [btnOn, setBtnOn] = useState('');
+  const categoryBtnHandler = (name, id) => {
     setBtnOn(id);
-    pageHandler();
+    handleId(name, id);
   };
   return (
     <BtnContainer>

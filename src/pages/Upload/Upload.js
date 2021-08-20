@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import UploadInfo from './components/UploadInfo/UploadInfo';
+import UploadInfo from './UploadInfo';
 
 const Upload = () => {
   return (
@@ -20,7 +20,6 @@ const UploadContainer = styled.div`
 const BackgroundImg = styled.div`
   background-color: black;
   height: 100vh;
-  background-image: url(/images/project_upload.png);
-  background-size: cover;
+  background: url(/images/project_upload.png) 0% 0% / cover no-repeat;
 `;
 export default Upload;
