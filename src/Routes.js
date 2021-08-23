@@ -4,7 +4,7 @@ import Nav from './components/Nav/Nav';
 import Main from './pages/Main/Main';
 import Upload from './pages/Upload/Upload';
 import Footer from './components/Footer/Footer';
-import Login from './components/Login/Login';
+import Detail from './pages/Detail/Detail';
 
 const Routes = () => {
   return (
@@ -13,7 +13,7 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={Main} />
         <Route exact path="/upload" component={Upload} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/detail" component={Detail} />
       </Switch>
       <Footer />
     </Router>
