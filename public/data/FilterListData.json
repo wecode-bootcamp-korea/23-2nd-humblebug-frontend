@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "매 순간 변하는 시간의 아름다움",
+    "user_name": "anarc",
+    "image": "./images/project_image.jpg",
+    "aim_amount": 10045000,
+    "time": "20",
+    "category": "푸드",
+    "percent": "19"
+  },
+  {
+    "id": 2,
+    "name": "순간 변하는 시간의 아름다움",
+    "user_name": "anarc",
+    "image": "./images/project_image.jpg",
+    "aim_amount": 9045000,
+    "time": "30",
+    "category": "애견",
+    "percent": "580"
+  },
+  {
+    "id": 3,
+    "name": "변하는 시간의 아름다움 'Epoque3'",
+    "user_name": "anarc",
+    "image": "./images/project_image.jpg",
+    "aim_amount": 8045000,
+    "time": "27",
+    "category": "푸드",
+    "percent": "190"
+  },
+  {
+    "id": 4,
+    "name": "시간의 아름다움 'Epoque4'",
+    "user_name": "anarc",
+    "image": "./images/project_image.jpg",
+    "aim_amount": 74500,
+    "time": "21",
+    "category": "푸드",
+    "percent": "19"
+  },
+  {
+    "id": 5,
+    "name": "아름다움 'Epoque5'",
+    "user_name": "anarc",
+    "image": "./images/project_image.jpg",
+    "aim_amount": 2045000,
+    "time": "18",
+    "category": "푸드",
+    "percent": "19"
+  },
+  {
+    "id": 6,
+    "name": "Epoque6'",
+    "user_name": "anarc",
+    "image": "./images/project_image.jpg",
+    "aim_amount": 545000,
+    "time": "4",
+    "category": "푸드",
+    "percent": "19"
+  },
+  {
+    "id": 7,
+    "name": "'Epoque77'",
+    "user_name": "anarc",
+    "image": "./images/project_image.jpg",
+    "aim_amount": 10045000,
+    "time": "20",
+    "category": "푸드",
+    "percent": "19"
+  }
+]

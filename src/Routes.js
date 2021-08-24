@@ -8,6 +8,7 @@ import Detail from './pages/Detail/Detail';
 import Login from './pages/Login/Login';
 import Slide from './components/Slide';
 import Update from './pages/Update/Update';
+import Filter from './pages/Filter/Filter';
 
 const Routes = () => {
   return (
@@ -20,6 +21,7 @@ const Routes = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/slide" component={Slide} />
         <Route exact path="/update" component={Update} />
+        <Route exact path="/filter" component={Filter} />
       </Switch>
       <Footer />
     </Router>
