@@ -6,20 +6,22 @@ import { API } from '../../config';
 
 export const Login = () => {
   const kakaoLogin = () => {
-    window.Kakao.init('99627615023ab23e6325b2001976e368');
+    window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
     console.log(window.Kakao.isInitialized());
+
     window.Kakao.Auth.login({
       success: function (response) {
-        // console.log('Authorization:', response.access_token);
+        console.log(response);
         fetch(API.SIGNIN, {
           method: 'GET',
           headers: { Authorization: response.access_token },
         })
           .then(response => response.json())
           .then(response => {
-            console.log('Success:', response.message);
             if (response.message === 'SUCCESS') {
               history.push('/');
+              console.log(response.access_token);
+              localStorage.setItem('token', response.access_token);
             } else {
               history.push('/login');
             }
@@ -52,8 +54,6 @@ export const Login = () => {
     </div>
   );
 };
-
-// 스타일~~~~~~~~~~~~
 
 const Container = styled.section`
   height: 100vh;
