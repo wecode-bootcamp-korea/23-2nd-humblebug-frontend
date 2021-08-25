@@ -56,7 +56,7 @@ export const Main = () => {
 };
 
 const CarouselAll = styled.div`
-  margin: 5% auto;
+  margin: 0px auto 70px auto;
   width: 100%;
 
   .slick-arrow {
