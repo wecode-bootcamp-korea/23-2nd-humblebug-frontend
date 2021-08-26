@@ -7,11 +7,15 @@ export const Nav = () => {
   return (
     <Navbar>
       <ContentsBox>
-        <i className="fas fa-bars"></i>
-        <p>프로젝트 둘러보기</p>
+        <ProjectView>
+          <i className="fas fa-bars"></i>
+          <Link to="/filter">프로젝트 둘러보기</Link>
+        </ProjectView>
         <Link to="/upload">프로젝트 올리기</Link>
       </ContentsBox>
-      <div className="logo">tumblbug</div>
+      <Link to="/" className="logo">
+        Humblebug
+      </Link>
       <ContentsBox>
         <i class="fas fa-search"></i>
         <Link to="/login">로그인/회원가입</Link>
@@ -33,6 +37,22 @@ const Navbar = styled.div`
   .logo {
     font-weight: 700;
     padding-right: 50px;
+  }
+`;
+
+const LoginWarpper = styled.div`
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+`;
+
+const ProjectView = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 20px;
+  i {
+    margin-right: 10px;
   }
 `;
 
