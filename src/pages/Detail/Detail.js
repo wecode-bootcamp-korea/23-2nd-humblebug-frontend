@@ -29,10 +29,9 @@ const Detail = () => {
     fetch(`${API.DETAIL_COMMENT_POST}`, {
       method: 'POST',
       headers: {
-        Authorization: localStorage.getItem('TOKEN'),
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
-        user_id: 5,
         description: commentContent,
       }),
     })
@@ -67,20 +66,24 @@ const Detail = () => {
       .then(result => setCommentData(result.comments));
   }, []);
 
-  const { name, main_image_url } = detailData;
+  const { name, main_image_url, user, tag } = detailData;
 
   return (
     <>
       <DetailBox>
         <DetailTitleBox>
-          <DetailCategory>제품 디자인</DetailCategory>
+          {tag &&
+            tag.map(tagItem => (
+              <DetailCategory key={tagItem.id}>{tagItem.name}</DetailCategory>
+            ))}
+
           <DetailTitle>{name}</DetailTitle>
           <DetailName>
             <DetailProfileImg
               alt="창작자 프로필 이미지"
               src="/images/project_image.jpg"
             />
-            <span>unarc</span>
+            <span>{user}</span>
           </DetailName>
         </DetailTitleBox>
         <DetailMainImg alt="프로젝트 메인 이미지" src={main_image_url} />
@@ -113,6 +116,7 @@ const Detail = () => {
           <DetailRightContents
             propRef={optionRef}
             detailOption={detailOption}
+            user={user}
           />
         </DetailBox>
       </div>
@@ -140,11 +144,13 @@ const DetailTitleBox = styled.div`
 `;
 
 const DetailCategory = styled.span`
+  margin-right: 7px;
   padding: 5px 8px;
   font-weight: 600;
   color: #666;
   background-color: #fafafa;
   border: 1px solid #ddd;
+  cursor: pointer;
 `;
 
 const DetailTitle = styled.div`
