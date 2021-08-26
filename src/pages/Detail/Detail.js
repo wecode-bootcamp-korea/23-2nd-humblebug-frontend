@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import DetailCurrent from './DetailCurrent';
 import DetailRightContents from './DetailRightContents';
 import DetailProject from './DetailProject';
@@ -13,6 +14,8 @@ const Detail = () => {
   const [commentData, setCommentData] = useState([]);
   const [currentId, setCurrentId] = useState(1);
 
+  const { id } = useParams();
+
   const optionRef = useRef(null);
 
   const scrollToRef = () =>
@@ -26,7 +29,7 @@ const Detail = () => {
   };
 
   const handleClickInput = () => {
-    fetch(`${API.DETAIL_COMMENT_POST}`, {
+    fetch(`${API.PROJECT}/${id}/comment`, {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('token'),
@@ -49,19 +52,19 @@ const Detail = () => {
   };
 
   useEffect(() => {
-    fetch(`${API.DETAIL_GET}`)
+    fetch(`${API.PROJECT}/${id}`)
       .then(response => response.json())
       .then(result => {
         setDetailData(result.project_information);
       });
 
-    fetch(`${API.DETAIL_OPTION}`)
+    fetch(`${API.PROJECT}/${id}/option`)
       .then(response => response.json())
       .then(result => {
         setDetailOption(result.option);
       });
 
-    fetch(`${API.DETAIL_COMMENT_GET}`)
+    fetch(`${API.PROJECT}/${id}/comments`)
       .then(response => response.json())
       .then(result => setCommentData(result.comments));
   }, []);
@@ -117,6 +120,7 @@ const Detail = () => {
             propRef={optionRef}
             detailOption={detailOption}
             user={user}
+            projectId={id}
           />
         </DetailBox>
       </div>

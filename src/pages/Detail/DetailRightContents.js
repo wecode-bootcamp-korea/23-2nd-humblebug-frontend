@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DetailOptionCard from './DetailOptionCard';
 import styled from 'styled-components';
 
-const DetailRightContents = ({ detailOption, propRef, user }) => {
+const DetailRightContents = ({ detailOption, propRef, user, projectId }) => {
   const [activeTab, setActiveTab] = useState(0);
   const changeActiveTab = index => {
     setActiveTab(index);
@@ -38,6 +38,7 @@ const DetailRightContents = ({ detailOption, propRef, user }) => {
             option_name={option.option_name}
             isActive={activeTab === option.id}
             changeActiveTab={() => changeActiveTab(option.id)}
+            projectId={projectId}
           />
         ))}
     </DetailRightBox>
