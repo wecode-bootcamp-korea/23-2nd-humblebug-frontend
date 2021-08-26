@@ -5,13 +5,14 @@ import styled from 'styled-components';
 const DetailOptionCard = ({
   option_amount,
   option_name,
+  projectId,
   isActive,
   changeActiveTab,
 }) => {
   const [price, setPrice] = useState(0);
 
   const postData = () => {
-    fetch(`${API.DETAIL_OPTION}`, {
+    fetch(`${API.PROJECT}/${projectId}/option`, {
       method: 'POST',
       headers: {
         Authorization: localStorage.getItem('token'),
