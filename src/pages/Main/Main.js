@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { API } from '../../config';
 import styled from 'styled-components';
 import ProcessingProject from './ProcessingProject';
 
@@ -9,7 +10,7 @@ export const Main = () => {
   const [projectList, setProjectList] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.5.250:8000')
+    fetch(API.FILTER_GET)
       .then(res => res.json())
       .then(res => {
         setProjectList(res.project);
@@ -25,7 +26,6 @@ export const Main = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  console.log(projectList);
   return (
     <div>
       {/* 캐러셀 라이브러리 */}
@@ -42,7 +42,6 @@ export const Main = () => {
           </CarouselWrapper>
         </Slider>
       </CarouselAll>
-
       <MainText>현재 진행 중인 프로젝트</MainText>
       <ProjectListWrapper>
         {projectList.map((item, index) => (

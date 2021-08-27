@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router';
 import FILTER_CATEGORY from './filterCategory';
 import { API } from '../../config.js';
 import styled from 'styled-components';
@@ -6,6 +7,8 @@ import styled from 'styled-components';
 export const Filter = () => {
   const [filterList, setFilterList] = useState([]);
   const [btnColor, setBtnColor] = useState(0);
+
+  const history = useHistory();
 
   const handleClickFilter = listId => {
     fetch(`${API.FILTER_CATEGORY_GET}${listId}`)
@@ -43,10 +46,18 @@ export const Filter = () => {
       <FilterListWrap>
         {filterList &&
           filterList.map(list => (
-            <FilterListInfo key={list.id}>
-              <FilterListImg src={list.image} />
+            <FilterListInfo
+              onClick={() => history.push(`/detail/${list.id}`)}
+              key={list.id}
+            >
+              <FilterListImg src={list.main_image_url} />
 
-              <ProjectCategory>{list.category}</ProjectCategory>
+              {list.tag &&
+                list.tag.map(tagItem => (
+                  <ProjectCategory key={tagItem.id}>
+                    {tagItem.name}
+                  </ProjectCategory>
+                ))}
               <ProjectCreater>{list.user_name}</ProjectCreater>
               <ProjectDescription>{list.name}</ProjectDescription>
 
@@ -105,6 +116,7 @@ const FilterListInfo = styled.div`
   margin: 20px 0 60px 20px;
   background-color: white;
   border-radius: 7px;
+  cursor: pointer;
 
   &:nth-of-type(3n + 1) {
     margin-left: 0;

@@ -20,7 +20,7 @@ export const Login = () => {
           .then(response => {
             if (response.message === 'SUCCESS') {
               history.push('/');
-              console.log(response.access_token);
+              alert('로그인 성공!');
               localStorage.setItem('token', response.access_token);
             } else {
               history.push('/login');

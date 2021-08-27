@@ -7,10 +7,15 @@ export const Nav = () => {
   return (
     <Navbar>
       <ContentsBox>
+<<<<<<< HEAD
         <ProjectView>
           <i className="fas fa-bars"></i>
           <Link to="/filter">프로젝트 둘러보기</Link>
         </ProjectView>
+=======
+        <i className="fas fa-bars"></i>
+        <Link to="/filter">프로젝트 둘러보기</Link>
+>>>>>>> c1b6cb0 (final merge)
         <Link to="/upload">프로젝트 올리기</Link>
       </ContentsBox>
       <Link to="/" className="logo">
