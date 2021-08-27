@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DetailOptionCard from './DetailOptionCard';
 import styled from 'styled-components';
 
-const DetailRightContents = ({ detailOption, propRef }) => {
+const DetailRightContents = ({ detailOption, propRef, user, projectId }) => {
   const [activeTab, setActiveTab] = useState(0);
   const changeActiveTab = index => {
     setActiveTab(index);
@@ -16,7 +16,7 @@ const DetailRightContents = ({ detailOption, propRef }) => {
             alt="창작자 프로필 이미지"
             src="/images/project_image.jpg"
           />
-          <span>unarc</span>
+          <span>{user}</span>
         </CreatorName>
         <p>
           언아르크는 아크릴 소재를 기반으로 한 홈퍼니싱 굿즈를 만듭니다. 'an
@@ -38,6 +38,7 @@ const DetailRightContents = ({ detailOption, propRef }) => {
             option_name={option.option_name}
             isActive={activeTab === option.id}
             changeActiveTab={() => changeActiveTab(option.id)}
+            projectId={projectId}
           />
         ))}
     </DetailRightBox>

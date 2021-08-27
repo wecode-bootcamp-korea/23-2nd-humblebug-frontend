@@ -140,6 +140,7 @@ const MainText = styled.div`
   font-weight: bolder;
   font-size: 20px;
 `;
+
 const ProjectListWrapper = styled.div`
   display: flex;
   justify-content: space-between;

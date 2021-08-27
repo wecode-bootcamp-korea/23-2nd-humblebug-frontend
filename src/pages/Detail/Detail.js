@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import DetailCurrent from './DetailCurrent';
 import DetailRightContents from './DetailRightContents';
 import DetailProject from './DetailProject';
@@ -13,6 +14,8 @@ const Detail = () => {
   const [commentData, setCommentData] = useState([]);
   const [currentId, setCurrentId] = useState(1);
 
+  const { id } = useParams();
+
   const optionRef = useRef(null);
 
   const scrollToRef = () =>
@@ -26,13 +29,12 @@ const Detail = () => {
   };
 
   const handleClickInput = () => {
-    fetch(`${API.DETAIL_COMMENT_POST}`, {
+    fetch(`${API.PROJECT}/${id}/comment`, {
       method: 'POST',
       headers: {
-        Authorization: localStorage.getItem('TOKEN'),
+        Authorization: localStorage.getItem('token'),
       },
       body: JSON.stringify({
-        user_id: 5,
         description: commentContent,
       }),
     })
@@ -50,37 +52,41 @@ const Detail = () => {
   };
 
   useEffect(() => {
-    fetch(`${API.DETAIL_GET}`)
+    fetch(`${API.PROJECT}/${id}`)
       .then(response => response.json())
       .then(result => {
         setDetailData(result.project_information);
       });
 
-    fetch(`${API.DETAIL_OPTION}`)
+    fetch(`${API.PROJECT}/${id}/option`)
       .then(response => response.json())
       .then(result => {
         setDetailOption(result.option);
       });
 
-    fetch(`${API.DETAIL_COMMENT_GET}`)
+    fetch(`${API.PROJECT}/${id}/comments`)
       .then(response => response.json())
       .then(result => setCommentData(result.comments));
   }, []);
 
-  const { name, main_image_url } = detailData;
+  const { name, main_image_url, user, tag } = detailData;
 
   return (
     <>
       <DetailBox>
         <DetailTitleBox>
-          <DetailCategory>제품 디자인</DetailCategory>
+          {tag &&
+            tag.map(tagItem => (
+              <DetailCategory key={tagItem.id}>{tagItem.name}</DetailCategory>
+            ))}
+
           <DetailTitle>{name}</DetailTitle>
           <DetailName>
             <DetailProfileImg
               alt="창작자 프로필 이미지"
               src="/images/project_image.jpg"
             />
-            <span>unarc</span>
+            <span>{user}</span>
           </DetailName>
         </DetailTitleBox>
         <DetailMainImg alt="프로젝트 메인 이미지" src={main_image_url} />
@@ -113,6 +119,8 @@ const Detail = () => {
           <DetailRightContents
             propRef={optionRef}
             detailOption={detailOption}
+            user={user}
+            projectId={id}
           />
         </DetailBox>
       </div>
@@ -140,11 +148,13 @@ const DetailTitleBox = styled.div`
 `;
 
 const DetailCategory = styled.span`
+  margin-right: 7px;
   padding: 5px 8px;
   font-weight: 600;
   color: #666;
   background-color: #fafafa;
   border: 1px solid #ddd;
+  cursor: pointer;
 `;
 
 const DetailTitle = styled.div`

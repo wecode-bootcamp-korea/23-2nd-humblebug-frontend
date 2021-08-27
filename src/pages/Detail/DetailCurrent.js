@@ -15,7 +15,8 @@ const DetailCurrent = ({ detailData, scrollClick }) => {
     <CurrentBox>
       <CurrentTitle>모인금액</CurrentTitle>
       <CurrentContent>
-        {collected_amount && collected_amount.toLocaleString()}
+        {aim_amount &&
+          (collected_amount === null ? 0 : collected_amount.toLocaleString())}
         <span> 원</span>
         <span>{percentage}</span>
       </CurrentContent>
