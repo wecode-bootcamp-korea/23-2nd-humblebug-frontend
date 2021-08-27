@@ -1,4 +1,4 @@
-const BASE_URL = 'http://10.58.3.123:8000';
+const BASE_URL = 'http://10.58.0.158:8000';
 
 export const API = {
   DETAIL_GET: `${BASE_URL}/project/4`, //상세페이지 데이터
