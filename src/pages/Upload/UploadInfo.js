@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router';
 import styled from 'styled-components';
 import Description from './Description/Description';
 import PageChangeBtn from './Description/PageChangeBtn';
@@ -20,6 +21,12 @@ const UploadInfo = () => {
     image: '',
   });
 
+  const history = useHistory();
+
+  const historyFunction = location => {
+    history.push(location);
+  };
+
   const handleDescPageOpen = (target, id) => {
     setDescPage(true);
     setUploadData({ ...uploadData, [target]: id });
@@ -33,6 +40,7 @@ const UploadInfo = () => {
     setUploadData({ ...uploadData, [key]: value });
   };
 
+  console.log(uploadData);
   return (
     <InfoTable>
       <SubmitPage firstPage={true} infoPage={infoPage}>
@@ -62,6 +70,7 @@ const UploadInfo = () => {
             uploadData.end_date &&
             uploadData.image
           }
+          historyFunction={historyFunction}
           backgroundColor="rgb(255 87 87)"
         >
           시작하기

@@ -1,11 +1,12 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 import styled from 'styled-components';
 
 function ProcessingProject({ projectInfo }) {
-  // console.log(projectInfo.image);
+  const history = useHistory();
   return (
-    <ProjectInfo>
-      <ProjectImg src={projectInfo.image}></ProjectImg>
+    <ProjectInfo onClick={() => history.push(`/detail/${projectInfo.id}`)}>
+      <ProjectImg src={projectInfo.main_image_url}></ProjectImg>
       <TextWrapper>
         <ProjectCategory>{projectInfo.category_name}</ProjectCategory>
         <ProjectCreater>{projectInfo.user_name}</ProjectCreater>
@@ -24,6 +25,7 @@ const ProjectInfo = styled.div`
   margin-top: 20px;
   background-color: white;
   border-radius: 7px;
+  cursor: pointer;
 `;
 
 const TextWrapper = styled.div`

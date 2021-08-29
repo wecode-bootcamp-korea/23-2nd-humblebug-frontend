@@ -24,6 +24,7 @@ const DetailOptionCard = ({
     })
       .then(response => response.json())
       .then(result => {
+        console.log(result);
         alert('후원이 완료되었습니다!');
       });
   };
@@ -140,7 +141,7 @@ const PriceBtn = styled.li`
   border: 1px solid #ddd;
   cursor: pointer;
 
-  &: hover {
+  &:hover {
     border: 1px solid #333;
   }
 `;

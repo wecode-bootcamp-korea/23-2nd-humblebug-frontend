@@ -5,15 +5,15 @@ const PageChangeBtn = ({
   children,
   active,
   onClickButton,
-  fetchMethod,
   data,
   backgroundColor,
   id,
+  historyFunction,
 }) => {
   return (
     <ChangeBtn
       active={active}
-      onClick={() => onClickButton(data, id && id)}
+      onClick={() => onClickButton(data, historyFunction, id && id)}
       backgroundColor={backgroundColor}
     >
       {children}
